@@ -4,7 +4,8 @@ export async function loginUser(req, res) {
   console.log(req.body);
 
   const user = [req.body.login, req.body.password];
-  const sql = "select fio from client where login = ? and password_user = ?";
+  const sql =
+    "select id_user, fio from client where login = ? and password_user = ?";
 
   connection.query(sql, user, function (err, rezult) {
     if (err) console.log("user not found", err);

@@ -1,4 +1,4 @@
-import { postNewUser } from "./fetch/postNewUser.js";
+import { postNewUser } from "../../fetch/postNewUser.js";
 
 const email = document.getElementById("exampleInputEmail1");
 const login = document.getElementById("exampleInputEmail2");
