@@ -17,8 +17,15 @@ export async function insertNewUser(req, res) {
   const sql =
     "insert into client (fio, telefon, email, login, password_user) values (?, ?, ?, ?, ?)";
   connection.query(sql, userDate, function (err, results) {
-    if (err) console.log(err);
-    else console.log("Данные добавлены");
+    if (err) {
+      console.log("ERRORRR");
+      console.log(err.sqlMessage);
+      // return { error: true, message: err.sqlMessage };
+      // return res.status(400).json({ error: true, message: err.sqlMessage });
+      return res.status(400).send(JSON.stringify(err.sqlMessage));
+    } else {
+      console.log("Данные добавлены");
+    }
   });
 }
 
