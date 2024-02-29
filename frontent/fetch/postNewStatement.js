@@ -6,5 +6,6 @@ export async function postNewStatement(data) {
       "Content-Type": "application/json;charset=utf-8",
     },
     body: JSON.stringify(data),
-  }).then(response => response.json());
+  });
+  // .then(response => response.json());
 }

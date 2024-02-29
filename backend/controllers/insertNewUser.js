@@ -20,11 +20,10 @@ export async function insertNewUser(req, res) {
     if (err) {
       console.log("ERRORRR");
       console.log(err.sqlMessage);
-      // return { error: true, message: err.sqlMessage };
-      // return res.status(400).json({ error: true, message: err.sqlMessage });
       return res.status(400).send(JSON.stringify(err.sqlMessage));
     } else {
       console.log("Данные добавлены");
+      return res.status(200).send(JSON.stringify("Данные добавлены"));
     }
   });
 }

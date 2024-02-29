@@ -7,7 +7,7 @@ import { loginUser } from "./controllers/loginUser.js";
 import { selectStatement } from "./controllers/selectStatement.js";
 import { insertNewStatement } from "./controllers/insertNewStatement.js";
 import { selectStatementsAll } from "./controllers/selectStatementsAll.js";
-
+import { updateStatusStatement } from "./controllers/updateStatusStatement.js";
 // import {selectAllUsers}
 
 const app = express();
@@ -25,9 +25,10 @@ app.get("/", selectAllUsers);
 app.get("/user/:id", selectStatement);
 app.get("/statementsAll", selectStatementsAll);
 
-app.post("/", insertNewUser);
+app.post("/regisration", insertNewUser);
 app.post("/user", loginUser);
 app.post("/newStatement", insertNewStatement);
+app.post("/statements/status", updateStatusStatement);
 
 // app.post("/user/statements", selectStatement);
 
